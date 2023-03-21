@@ -29,8 +29,8 @@ const myPokemon = /*html*/ `
 <li>Name: ${pokemon.name}</li>
 <li>Description: ${pokemon.description}</li> 
 <li>Ability: ${pokemon.ability}</li> 
-<li>Image: <img src="${pokemon.image}"></li>
-<li>Footprint: <img src="${pokemon.footprint}"></li>
+<li>Image: (source: https://pokemondb.net/pokedex/charmander) <img src="${pokemon.image}"></li>
+<li>Footprint: (source: https://aminoapps.com/c/pokemon/page/blog/charmander-004/ZzhB_u5eKmlYWVJlNdGePD8Q62E50M) <img src="${pokemon.footprint}"></li>
 <li>Dexindex: ${pokemon.dexindex}</li>
 <li>Type: ${pokemon.type}</li> 
 <li>SubType: ${pokemon.subtype}</li>
