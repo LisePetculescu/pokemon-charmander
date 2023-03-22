@@ -1,0 +1,53 @@
+
+/* The grid */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+    background-color: #f1f1f1;
+    padding: 1em;
+
+}
+@media (min-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width: 992px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width: 1200px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width: 1500px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+img {
+    width: 20%;
+}
+
+header {
+    background-color: rgb(131, 27, 228);
+    padding: 2vw;
+    text-align: center;
+    width: 100vw;
+    height: auto;
+}
+footer {
+    background-color: rgb(131, 27, 228);
+    padding:3vw;
+    width: 100vw;
+    height: auto;
+            
+}
+body {
+    background-color: rgb(158, 105, 208);
+    margin: 0;
+}

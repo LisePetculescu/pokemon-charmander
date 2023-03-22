@@ -1,5 +1,7 @@
 "use-strict";
 
+window.addEventListener("load", initApp);
+
 const charmander = {
   name: "Charmander",
   description: "Lille orange gut/gutinde, med ild i halen",
@@ -25,7 +27,11 @@ const charmander = {
   statsSpeed: 6.5, //0-10,
 };
 
-function showPokemon(pokemon) {
+function initApp() {
+  
+}
+
+function detailPokemon(pokemon) {
   const myPokemon = /*html*/ `
 <li>Name: ${pokemon.name}</li>
 <li>Description: ${pokemon.description}</li> 
@@ -53,4 +59,20 @@ function showPokemon(pokemon) {
     .insertAdjacentHTML("beforeend", myPokemon);
   console.log(pokemon.name);
 }
-showPokemon(charmander);
+// showPokemon(charmander);
+
+function showPokemon(pokemon) {
+console.log(pokemon);
+document.querySelector("#pokemon article:last-child").addEventListener("click", pokemonClicked);
+
+function pokemonClicked() {
+  document.querySelector("#dialogBox").showModal();
+}
+document.querySelector("#pokemon").insertAdjacentHTML("beforeend", 
+/*html*/ `
+<article class="grid-item"> 
+<img src="${pokemon.image}">
+
+</article>
+`)
+}
