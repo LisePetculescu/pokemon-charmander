@@ -27,11 +27,9 @@ const charmander = {
   statsSpeed: 6.5, //0-10,
 };
 
-function initApp() {
-  
-}
+function initApp() {}
 
-function detailPokemon(pokemon) {
+function showPokemon(pokemon) {
   const myPokemon = /*html*/ `
 <li>Name: ${pokemon.name}</li>
 <li>Description: ${pokemon.description}</li> 
@@ -58,21 +56,12 @@ function detailPokemon(pokemon) {
     .querySelector("#pokemons")
     .insertAdjacentHTML("beforeend", myPokemon);
   console.log(pokemon.name);
-}
-// showPokemon(charmander);
+  console.log(pokemon);
+  document.querySelector("#pokemons").addEventListener("click", pokemonClicked);
 
-function showPokemon(pokemon) {
-console.log(pokemon);
-document.querySelector("#pokemon article:last-child").addEventListener("click", pokemonClicked);
-
-function pokemonClicked() {
-  document.querySelector("#dialogBox").showModal();
+  function pokemonClicked() {
+    document.querySelector("#dialogBox").showModal();
+  }
 }
-document.querySelector("#pokemon").insertAdjacentHTML("beforeend", 
-/*html*/ `
-<article class="grid-item"> 
-<img src="${pokemon.image}">
 
-</article>
-`)
-}
+showPokemon(charmander);
