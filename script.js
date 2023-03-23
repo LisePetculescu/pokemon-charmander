@@ -16,7 +16,7 @@ function showPokemon(pokemon) {
     <article>
       <h2>${pokemon.name}</h2>
       <img src="${pokemon.image}">
-      <li>Description: ${pokemon.description}</li> 
+      <li>${pokemon.description}</li> 
       <li>Ability: ${pokemon.ability}</li> 
       <li>Dexindex: ${pokemon.dexindex}</li>
       <li>Type: ${pokemon.type}</li> 
@@ -55,6 +55,7 @@ function showPokemon(pokemon) {
       <button>Back</button>
     </form> `;
     document.querySelector("#dialogBox").showModal();
+    document.querySelector("#dialogBox").scrollTo({top: 0, behavior: 'smooth'}); 
   }
 }
 
