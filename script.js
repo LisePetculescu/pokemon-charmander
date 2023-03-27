@@ -3,31 +3,53 @@
 window.addEventListener("load", initApp);
 
 async function initApp() {
-  const charmander2 = await getPokemon(
-    "https://raw.githubusercontent.com/LisePetculescu/pokemon-charmander/main/charmander.json"
+  const pokemons = await getPokemon(
+    "https://cederdorff.github.io/dat-js/05-data/pokemons.json"
   );
-  showPokemon(charmander2);
+
+  pokemons.forEach(showPokemon);
+  // const charmander = await getPokemon(
+  //   "https://raw.githubusercontent.com/LisePetculescu/pokemon-charmander/main/charmander.json"
+  // );
+  // const buster = await getPokemon(
+  //   "https://raw.githubusercontent.com/buan0001/pokemon-data/main/mudkip.json"
+  // );
+  // const squirtle = await getPokemon(
+  //   "https://raw.githubusercontent.com/MaryanQ/Data/main/squirtle.json"
+  // );
+  // showPokemon(charmander);
+  // showPokemon(buster);
+  // showPokemon(squirtle);
 }
 
 function showPokemon(pokemon) {
   document.querySelector("#pokemons").insertAdjacentHTML(
     "beforeend",
     /*HTML*/ `  
-    <article>
-      <h2>${pokemon.name}</h2>
-      <img src="${pokemon.image}">
-      <li>${pokemon.description}</li> 
+    <article class="grid-item">
+    <h2>${pokemon.name}</h2>
+    <img src="${pokemon.image}">
+    <ul>  <li>${pokemon.description}</li> 
       <li>Ability: ${pokemon.ability}</li> 
       <li>Dexindex: ${pokemon.dexindex}</li>
       <li>Type: ${pokemon.type}</li> 
+    </ul>
+    
     </article>`
   );
   console.log(pokemon.name);
   console.log(pokemon);
-  document.querySelector("#pokemons").addEventListener("click", pokemonClicked);
+  document
+    .querySelector("#pokemons article:last-child")
+    .addEventListener("click", pokemonClicked);
 
   function pokemonClicked() {
-    document.querySelector("#dialogBox").innerHTML = /*HTML*/ `  
+    showPokemonDetail(pokemon);
+  }
+}
+
+function showPokemonDetail(pokemon) {
+  document.querySelector("#dialogBox").innerHTML = /*HTML*/ `  
     <article>
       <h2>${pokemon.name}</h2>
       <img src="${pokemon.image}">
@@ -54,9 +76,8 @@ function showPokemon(pokemon) {
     <form method="dialog">
       <button>Back</button>
     </form> `;
-    document.querySelector("#dialogBox").showModal();
-    document.querySelector("#dialogBox").scrollTo({top: 0, behavior: 'smooth'}); 
-  }
+  document.querySelector("#dialogBox").showModal();
+  document.querySelector("#dialogBox").scrollTo({ top: 0, behavior: "smooth" });
 }
 
 async function getPokemon(url) {

@@ -1,53 +1,62 @@
-
 /* The grid */
 .grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1em;
-    background-color: white;
-    padding: 1em;
-
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  /* background-color: white; */
+  padding: 1em;
 }
 @media (min-width: 600px) {
-    .grid {
-        grid-template-columns: 1fr 1fr;
-    }
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media (min-width: 992px) {
-    .grid {
-        grid-template-columns: 1fr 1fr;
-    }
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 @media (min-width: 1200px) {
-    .grid {
-        grid-template-columns: 1fr 1fr;
-    }
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 @media (min-width: 1500px) {
-    .grid {
-        grid-template-columns: 1fr 1fr;
-    }
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
 }
 
+.grid-item {
+  background-color: rgb(226, 43, 43);
+  padding: 1em;
+}
+
+/* the page */
 img {
-    width: 50%;
+  width: 50%;
 }
 
 header {
-    background-color: rgb(131, 27, 228);
-    padding: 2vw;
-    text-align: center;
-    width: 100vw;
-    height: auto;
+  background-color: rgb(131, 27, 228);
+  padding: 2em;
+  text-align: center;
+  width: 100%;
+  height: auto;
 }
 footer {
-    background-color: rgb(131, 27, 228);
-    padding:3vw;
-    width: 100vw;
-    height: auto;
-            
+  background-color: rgb(131, 27, 228);
+  padding: 3em;
+  width: 100%;
+  height: auto;
 }
 body {
-    background-color: rgb(158, 105, 208);
-    margin: 0;
+  background-color: rgb(158, 105, 208);
+  margin: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
