@@ -7,19 +7,10 @@ async function initApp() {
     "https://cederdorff.github.io/dat-js/05-data/pokemons.json"
   );
 
-  pokemons.forEach(showPokemon);
-  // const charmander = await getPokemon(
-  //   "https://raw.githubusercontent.com/LisePetculescu/pokemon-charmander/main/charmander.json"
-  // );
-  // const buster = await getPokemon(
-  //   "https://raw.githubusercontent.com/buan0001/pokemon-data/main/mudkip.json"
-  // );
-  // const squirtle = await getPokemon(
-  //   "https://raw.githubusercontent.com/MaryanQ/Data/main/squirtle.json"
-  // );
-  // showPokemon(charmander);
-  // showPokemon(buster);
-  // showPokemon(squirtle);
+  // pokemons.forEach(showPokemon);
+  for (const pokemon of pokemons) {
+    showPokemon(pokemon);
+  }
 }
 
 function showPokemon(pokemon) {
@@ -61,8 +52,8 @@ function showPokemonDetail(pokemon) {
       <li>SubType: ${pokemon.subtype}</li>
       <li>Weaknesses: ${pokemon.weaknesses} </li>
       <li>Gender: ${pokemon.gender}</li>
-      <li>Weight: ${pokemon.weight}</li>
-      <li>Height: ${pokemon.height}</li>
+      <li>Weight (g): ${pokemon.weight}</li>
+      <li>Height (cm): ${pokemon.height}</li>
       <li>Generation: ${pokemon.generation}</li>
       <li>Spilversion: ${pokemon.spilversion}</li>
       <li>Can it evolve: ${pokemon.canEvolve}</li>

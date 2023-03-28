@@ -5,7 +5,7 @@ const charmander = {
   image: "https://img.pokemondb.net/artwork/large/charmander.jpg",
   footprint:
     "https://pm1.narvii.com/5781/12d7b8412b625610a414e6fb2aeab6cecc9aa433_hq.jpg",
-  dexindex: 0004,
+  dexindex: "0004",
   type: "fire",
   subtype: "none", //tekst,
   weaknesses: "water, Ground, Rock",
