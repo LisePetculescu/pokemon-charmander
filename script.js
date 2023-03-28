@@ -20,7 +20,7 @@ function showPokemon(pokemon) {
     <article class="grid-item">
     <h2>${pokemon.name}</h2>
     <img src="${pokemon.image}">
-    <ul>  <li>${pokemon.description}</li> 
+    <ul>  
       <li>Ability: ${pokemon.ability}</li> 
       <li>Dexindex: ${pokemon.dexindex}</li>
       <li>Type: ${pokemon.type}</li> 

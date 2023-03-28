@@ -4,6 +4,7 @@
   grid-template-columns: 1fr;
   gap: 1em;
   padding: 1em;
+  /* background-color: red; */
 }
 @media (min-width: 600px) {
   .grid {
@@ -26,7 +27,7 @@
   /* #f0793a; */
   /* rgb(160, 100, 228) */
   position: relative;
-  top: 120px;
+  top: 100px;
   padding: 1em;
   border: outset 3px rgba(255, 128, 0, 0.515);
   border-radius: 10px;
@@ -35,33 +36,22 @@
 }
 .grid-item:hover {
   box-shadow: 0 0 50px orange;
-  animation: zoomIn 0.7s linear 0s infinite alternate forwards;
+  animation: focus 0.7s linear 0s infinite alternate forwards;
   z-index: 99;
 }
 
 .grid-item img {
-  width: 50%;
+  position: relative;
+  width: 80%;
+  left: 10%;
 }
-
-@keyframes zoomIn {
-  0% {
-    transform: scale(1);
-    background-color: #fb9324ce;
-    
-  }
-  100% {
-    transform: scale(1.1);
-    background-color: #f1b657;
-  }
-}
-
 
 /* the page */
 
 header {
   background-color: #fb9224; 
   /* rgb(131, 27, 228); */
-  padding: 1em;
+  padding: 0.5em;
   text-align: center;
   height: auto;
   border: solid 3px rgba(244, 123, 1, 0.261);
@@ -70,6 +60,7 @@ header {
   left: 0;
   right: 0;
   z-index: 99;
+  
 }
 footer {
   background-color: #fb9224; 
@@ -82,7 +73,7 @@ footer {
   
 }
 body {
-  background-color: #fbe555; 
+  background-color: #ebd6d6; 
   /* rgb(158, 105, 208); */
   margin: 0;
   /* animation: shine 2s ease-in-out 0s infinite alternate forwards; */
@@ -90,12 +81,27 @@ body {
 
 ::-webkit-scrollbar {
   background-color: #fb9224;
-  border: solid #fbe555;
+  border: solid #ebd6d6; 
+  /* #fbe555; */
+    border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
   background-color: #eed440;
   border: solid 1px;
   border-radius: 10px;
+}
+
+/* animations */
+@keyframes focus {
+  0% {
+    transform: scale(1.1);
+    background-color: #fb9324;
+  }
+
+  100% {
+    transform: scale(1.1);
+    background-color: #f1b657;
+  }
 }
 
 @keyframes shine {
