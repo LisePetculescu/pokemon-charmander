@@ -42,7 +42,7 @@
 .grid-item:hover {
   box-shadow: 0 0 50px orange;
   animation: focus 0.7s linear 0s infinite alternate forwards;
-  z-index: 99;
+  /* z-index: 99; */
 }
 
 .grid-item img {
@@ -54,7 +54,9 @@
 /* the page */
 
 header {
-  background-color: rgb(76, 224, 76); 
+  background-color: 
+  /* #ffde74; */
+  rgb(76, 224, 76); 
   /* #fb9224;  */
   /* rgb(131, 27, 228); */
   /* padding: 0em; */
@@ -65,7 +67,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 99;
+  z-index: 9999;
   
 }
 footer {
@@ -83,6 +85,7 @@ footer a {
 }
 body {
   background-color: #ebd6d6; 
+  /* #f3f3f3; */
   /* rgb(158, 105, 208); */
   margin: 0;
   /* animation: shine 2s ease-in-out 0s infinite alternate forwards; */
