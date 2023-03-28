@@ -1,3 +1,10 @@
+// to do:
+// boolean --> til ny string se https://cederdorff.github.io/dat-js/slides/Loops-events-&-closure.pdf
+// aktivitetsdiagram
+// skitser
+// readme.md
+// 
+
 "use-strict";
 
 window.addEventListener("load", initApp);
