@@ -1,10 +1,15 @@
 /* The grid */
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1em;
   padding: 1em;
   /* background-color: red; */
+}
+@media (min-width: 400px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media (min-width: 600px) {
   .grid {
@@ -49,12 +54,13 @@
 /* the page */
 
 header {
-  background-color: #fb9224; 
+  background-color: rgb(76, 224, 76); 
+  /* #fb9224;  */
   /* rgb(131, 27, 228); */
   /* padding: 0em; */
   text-align: center;
   height: auto;
-  border: solid 3px rgba(244, 123, 1, 0.261);
+  border: solid 3px rgba(244, 123, 1, 0.407);
   position: fixed;
   top: 0;
   left: 0;
@@ -63,14 +69,17 @@ header {
   
 }
 footer {
-  background-color: #fb9224; 
+  background-color: rgb(76, 224, 76);
+  /* #fb9224;  */
   /* rgb(131, 27, 228); */
   position: relative;
   top: 130px;
   padding: 2em;
   height: auto;
   border: solid 3px rgba(244, 123, 1, 0.392);
-  
+}
+footer a {
+  color: black;
 }
 body {
   background-color: #ebd6d6; 
@@ -80,14 +89,16 @@ body {
 }
 
 ::-webkit-scrollbar {
-  background-color: #fb9224;
+  background-color: rgb(76, 224, 76);
+  /* #fb9224; */
   border: solid #ebd6d6; 
   /* #fbe555; */
     border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #eed440;
-  border: solid 1px;
+  background-color: rgb(115, 230, 113);
+  /* #eed440; */
+  border: solid 1px #ebd6d6;
   border-radius: 10px;
 }
 
