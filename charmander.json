@@ -14,10 +14,10 @@
   "generation": 1,
   "spilversion": "Pokémon Red and Blue",
   "canEvolve": true,
-  "statsHP": 3.9,
-  "statsAttack": 5.2,
-  "statsDefence": 4.3,
-  "statsSpecialAttack": 6,
-  "statsSpecialDefence": 5,
-  "statsSpeed": 6.5
+  "statsHP": 39,
+  "statsAttack": 52,
+  "statsDefence": 43,
+  "statsSpecialAttack": 60,
+  "statsSpecialDefence": 50,
+  "statsSpeed": 65
 }
