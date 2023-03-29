@@ -3,7 +3,8 @@
 // venter svar fra race - aktivitetsdiagram
 // done - skitser
 // done - readme.md
-// css on button
+// done - css on button
+// when esc pressed in modal view --> fuckUp
 
 "use-strict";
 
@@ -19,6 +20,11 @@ async function initApp() {
     showPokemon(pokemon);
   }
 }
+
+
+
+
+
 
 async function getPokemon(url) {
   const response = await fetch(url);
@@ -87,7 +93,12 @@ function showPokemonDetail(pokemon) {
       <button id="backBTN">Back</button>
     </form> `;
 
-    document.querySelector("button").addEventListener("click", removeBlur);
+  document.querySelector("#backBTN").addEventListener("click", removeBlur);
+  document.onkeydown = function()
+      {
+       removeBlur();
+      }
+
 
     // no booleans :P
   let evolvingString = makeNewEvolveString(pokemon);
@@ -112,8 +123,12 @@ function makeNewEvolveString(pokemon) {
 
 function blurBackground() {
   document.querySelector("#pokemons").classList.add("blur", "fixed");
+  document.querySelector("header").classList.add("blur", "fixed");
+  document.querySelector("footer").classList.add("blur", "fixed");
 }
 
 function removeBlur() {
   document.querySelector("#pokemons").classList.remove("blur", "fixed");
+  document.querySelector("header").classList.remove("blur", "fixed");
+  document.querySelector("footer").classList.remove("blur", "fixed");
 }

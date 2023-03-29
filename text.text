@@ -22,3 +22,21 @@ const charmander = {
   statsSpecialDefence: 5, //tal 0-10,
   statsSpeed: 6.5, //0-10,
 };
+
+// trying to remove some classes when escape pressed: (not working)
+// it also removes the classes when space pressed...
+// 
+// document.addEventListener('keydown', evt => {
+//   if (evt.key === 'Escape') {
+//     console.log("esc pressed");
+//     removeBlur();
+//   }
+//   else {
+//     console.log("not esc");
+//   }
+// });
+// document.onkeydown = function(esc) {
+//   if (KeyboardEvent.keyCode == 27) {
+//     removeBlur();
+//   }
+// }
