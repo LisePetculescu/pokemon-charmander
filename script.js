@@ -1,10 +1,10 @@
 // to do:
 // done - boolean --> til ny string se https://cederdorff.github.io/dat-js/slides/Loops-events-&-closure.pdf
-// venter svar fra race - aktivitetsdiagram
+// !venter svar fra race - aktivitetsdiagram
 // done - skitser
 // done - readme.md
 // done - css on button
-// when esc pressed in modal view --> fuckUp
+// done - when esc pressed in modal view --> fuckUp
 
 "use-strict";
 
@@ -14,6 +14,8 @@ async function initApp() {
   const pokemons = await getPokemon(
     "https://cederdorff.github.io/dat-js/05-data/pokemons.json"
   );
+  pokemons.sort(sortByDexindex);
+  console.log(pokemons);
 
   // pokemons.forEach(showPokemon);
   for (const pokemon of pokemons) {
@@ -92,7 +94,7 @@ function showPokemonDetail(pokemon) {
   document.querySelector("#backBTN").addEventListener("click", removeBlur);
 
   document.addEventListener("keydown", keyDown);
-  
+
   // no booleans :P
   let evolvingString = makeNewEvolveString(pokemon);
   document.querySelector("#evolve").textContent = evolvingString;
@@ -121,16 +123,12 @@ function removeBlur() {
 }
 
 function keyDown(event) {
-  if (
-    event.keyCode == 27 ||
-    event.keyCode == "Escape" 
-  ) {
-    removeBlur(); }
-   else if (
-    event.keyCode !== 27 ||
-    event.keyCode !== "Escape"
-  ) {
+  if (event.keyCode == 27 || event.keyCode == "Escape") {
+    removeBlur();
+  } else if (event.keyCode !== 27 || event.keyCode !== "Escape") {
     console.log(event.keyCode);
   }
-
+}
+function sortByDexindex(pokemonA, pokemonB) {
+  return pokemonA.dexindex - pokemonB.dexindex;
 }
