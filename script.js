@@ -64,7 +64,7 @@ function showPokemonDetail(pokemon) {
       <p>${pokemon.description}</p> 
       <hr>
       <li>Ability: ${pokemon.ability}</li> 
-      <li>Footprint:<img id="footPic" src="${pokemon.footprint}"></li>
+      <li>Footprint:<br><img id="footPic" src="${pokemon.footprint}"></li>
       <li>Dexindex: ${pokemon.dexindex}</li>
       <li>Type: ${pokemon.type}</li> 
       <li>SubType: ${pokemon.subtype}</li>
@@ -84,7 +84,7 @@ function showPokemonDetail(pokemon) {
     </article>
     <br>
     <form method="dialog">
-      <button>Back</button>
+      <button id="backBTN">Back</button>
     </form> `;
 
     document.querySelector("button").addEventListener("click", removeBlur);

@@ -83,6 +83,9 @@ footer {
 footer a {
   color: black;
 }
+footer a:hover {
+  box-shadow: 0 0 5px green;
+}
 body {
   background-color: #ebd6d6; 
   /* #f3f3f3; */
@@ -90,25 +93,6 @@ body {
   margin: 0;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   /* animation: shine 2s ease-in-out 0s infinite alternate forwards; */
-}
-
-dialog {
-  max-width: 50vw;
-  background-color: #f1b657;
-}
-#pokePic {
-  position: relative;
-  width: 80%;
-  left: 10%;
-}
-#footPic {
-  width: 20%;
-}
-
-hr {
-  height:2px;
-  border-width:0;
-  background-color:black;
 }
 
 ::-webkit-scrollbar {
@@ -133,13 +117,44 @@ hr {
   position: fixed;
 }
 
+
+/* The modal */
+dialog {
+  width: 50vw;
+  background-color: #f1b657;
+  animation: open 0.3s linear 0s 1 normal forwards;
+}
+#pokePic {
+  position: relative;
+  width: 80%;
+  left: 10%;
+}
+#footPic {
+  position: relative;
+  width: 20%;
+  left: 20px;
+}
+
+hr {
+  height:2px;
+  border-width:0;
+  background-color:black;
+}
+#backBTN {
+  background-color: rgb(234, 167, 43);
+  border-color: #fb9324;
+}
+#backBTN:hover {
+  box-shadow: 0 0 5px black;
+  animation: focus 0.7s linear 0s infinite alternate forwards;
+}
+
 /* animations */
 @keyframes focus {
   0% {
     transform: scale(1.01);
     background-color: #fb9324;
   }
-
   100% {
     transform: scale(1.01);
     background-color: #f1b657;
@@ -155,3 +170,11 @@ hr {
   }
 }
 
+@keyframes open {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
