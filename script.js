@@ -1,8 +1,8 @@
 // to do:
-// boolean --> til ny string se https://cederdorff.github.io/dat-js/slides/Loops-events-&-closure.pdf
+// done - boolean --> til ny string se https://cederdorff.github.io/dat-js/slides/Loops-events-&-closure.pdf
 // aktivitetsdiagram
 // skitser
-// readme.md
+// done - readme.md
 // 
 
 "use-strict";
@@ -63,7 +63,7 @@ function showPokemonDetail(pokemon) {
       <li>Height (cm): ${pokemon.height}</li>
       <li>Generation: ${pokemon.generation}</li>
       <li>Spilversion: ${pokemon.spilversion}</li>
-      <li>Can it evolve: ${pokemon.canEvolve}</li>
+      <li id="evolve">Can it evolve: ${pokemon.canEvolve}</li>
       <li>HP: ${pokemon.statsHP}</li>
       <li>Attack: ${pokemon.statsAttack}</li>
       <li>Defence: ${pokemon.statsDefence}</li>
@@ -74,6 +74,11 @@ function showPokemonDetail(pokemon) {
     <form method="dialog">
       <button>Back</button>
     </form> `;
+
+    // no booleans :P
+  let evolvingString = makeNewEvolveString(pokemon);
+  document.querySelector("#evolve").textContent = evolvingString;
+
   document.querySelector("#dialogBox").showModal();
   document.querySelector("#dialogBox").scrollTo({ top: 0, behavior: "smooth" });
 }
@@ -82,4 +87,16 @@ async function getPokemon(url) {
   const response = await fetch(url);
   const data = await response.json();
   return data;
+}
+
+
+// Helping function(s)
+function makeNewEvolveString(pokemon) {
+  let evolvingString = "";
+  if (pokemon.canEvolve == true) {
+    evolvingString = "This pokemon can evolve"
+  } else if (pokemon.canEvolve == false) {
+    evolvingString = "This pokemon can't evolve"
+  }
+  return evolvingString;
 }
