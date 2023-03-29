@@ -88,7 +88,27 @@ body {
   /* #f3f3f3; */
   /* rgb(158, 105, 208); */
   margin: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   /* animation: shine 2s ease-in-out 0s infinite alternate forwards; */
+}
+
+dialog {
+  max-width: 50vw;
+  background-color: #f1b657;
+}
+#pokePic {
+  position: relative;
+  width: 80%;
+  left: 10%;
+}
+#footPic {
+  width: 20%;
+}
+
+hr {
+  height:2px;
+  border-width:0;
+  background-color:black;
 }
 
 ::-webkit-scrollbar {
@@ -103,6 +123,14 @@ body {
   /* #eed440; */
   border: solid 1px #ebd6d6;
   border-radius: 10px;
+}
+
+.blur {
+  filter: blur(3px);
+}
+
+.fixed {
+  position: fixed;
 }
 
 /* animations */

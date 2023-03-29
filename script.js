@@ -1,9 +1,9 @@
 // to do:
 // done - boolean --> til ny string se https://cederdorff.github.io/dat-js/slides/Loops-events-&-closure.pdf
-// aktivitetsdiagram
-// skitser
+// venter svar fra race - aktivitetsdiagram
+// done - skitser
 // done - readme.md
-// 
+// css on button
 
 "use-strict";
 
@@ -18,6 +18,12 @@ async function initApp() {
   for (const pokemon of pokemons) {
     showPokemon(pokemon);
   }
+}
+
+async function getPokemon(url) {
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
 }
 
 function showPokemon(pokemon) {
@@ -41,6 +47,9 @@ function showPokemon(pokemon) {
     .querySelector("#pokemons article:last-child")
     .addEventListener("click", pokemonClicked);
 
+  document.querySelector("#pokemons article:last-child")
+  .addEventListener("click", blurBackground);
+
   function pokemonClicked() {
     showPokemonDetail(pokemon);
   }
@@ -50,10 +59,12 @@ function showPokemonDetail(pokemon) {
   document.querySelector("#dialogBox").innerHTML = /*HTML*/ `  
     <article>
       <h2>${pokemon.name}</h2>
-      <img src="${pokemon.image}">
-      <li>Description: ${pokemon.description}</li> 
+      <hr>
+      <img id="pokePic" src="${pokemon.image}">
+      <p>${pokemon.description}</p> 
+      <hr>
       <li>Ability: ${pokemon.ability}</li> 
-      <li>Footprint:<img src="${pokemon.footprint}"></li>
+      <li>Footprint:<img id="footPic" src="${pokemon.footprint}"></li>
       <li>Dexindex: ${pokemon.dexindex}</li>
       <li>Type: ${pokemon.type}</li> 
       <li>SubType: ${pokemon.subtype}</li>
@@ -71,9 +82,12 @@ function showPokemonDetail(pokemon) {
       <li>Special Defence: ${pokemon.statsSpecialDefence}</li>
       <li>Speed: ${pokemon.statsSpeed}</li>
     </article>
+    <br>
     <form method="dialog">
       <button>Back</button>
     </form> `;
+
+    document.querySelector("button").addEventListener("click", removeBlur);
 
     // no booleans :P
   let evolvingString = makeNewEvolveString(pokemon);
@@ -83,11 +97,6 @@ function showPokemonDetail(pokemon) {
   document.querySelector("#dialogBox").scrollTo({ top: 0, behavior: "smooth" });
 }
 
-async function getPokemon(url) {
-  const response = await fetch(url);
-  const data = await response.json();
-  return data;
-}
 
 
 // Helping function(s)
@@ -99,4 +108,12 @@ function makeNewEvolveString(pokemon) {
     evolvingString = "This pokemon can't evolve"
   }
   return evolvingString;
+}
+
+function blurBackground() {
+  document.querySelector("#pokemons").classList.add("blur", "fixed");
+}
+
+function removeBlur() {
+  document.querySelector("#pokemons").classList.remove("blur", "fixed");
 }
