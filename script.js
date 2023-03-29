@@ -21,11 +21,6 @@ async function initApp() {
   }
 }
 
-
-
-
-
-
 async function getPokemon(url) {
   const response = await fetch(url);
   const data = await response.json();
@@ -53,8 +48,9 @@ function showPokemon(pokemon) {
     .querySelector("#pokemons article:last-child")
     .addEventListener("click", pokemonClicked);
 
-  document.querySelector("#pokemons article:last-child")
-  .addEventListener("click", blurBackground);
+  document
+    .querySelector("#pokemons article:last-child")
+    .addEventListener("click", blurBackground);
 
   function pokemonClicked() {
     showPokemonDetail(pokemon);
@@ -94,13 +90,10 @@ function showPokemonDetail(pokemon) {
     </form> `;
 
   document.querySelector("#backBTN").addEventListener("click", removeBlur);
-  document.onkeydown = function()
-      {
-       removeBlur();
-      }
 
-
-    // no booleans :P
+  document.addEventListener("keydown", keyDown);
+  
+  // no booleans :P
   let evolvingString = makeNewEvolveString(pokemon);
   document.querySelector("#evolve").textContent = evolvingString;
 
@@ -108,27 +101,36 @@ function showPokemonDetail(pokemon) {
   document.querySelector("#dialogBox").scrollTo({ top: 0, behavior: "smooth" });
 }
 
-
-
 // Helping function(s)
 function makeNewEvolveString(pokemon) {
   let evolvingString = "";
   if (pokemon.canEvolve == true) {
-    evolvingString = "This pokemon can evolve"
+    evolvingString = "This pokemon can evolve";
   } else if (pokemon.canEvolve == false) {
-    evolvingString = "This pokemon can't evolve"
+    evolvingString = "This pokemon can't evolve";
   }
   return evolvingString;
 }
 
 function blurBackground() {
-  document.querySelector("#pokemons").classList.add("blur", "fixed");
-  document.querySelector("header").classList.add("blur", "fixed");
-  document.querySelector("footer").classList.add("blur", "fixed");
+  document.querySelector("body").classList.add("blur", "fixed");
 }
 
 function removeBlur() {
-  document.querySelector("#pokemons").classList.remove("blur", "fixed");
-  document.querySelector("header").classList.remove("blur", "fixed");
-  document.querySelector("footer").classList.remove("blur", "fixed");
+  document.querySelector("body").classList.remove("blur", "fixed");
+}
+
+function keyDown(event) {
+  if (
+    event.keyCode == 27 ||
+    event.keyCode == "Escape" 
+  ) {
+    removeBlur(); }
+   else if (
+    event.keyCode !== 27 ||
+    event.keyCode !== "Escape"
+  ) {
+    console.log(event.keyCode);
+  }
+
 }
