@@ -41,7 +41,6 @@ function showPokemon(pokemon) {
       <li>Dexindex: ${pokemon.dexindex}</li>
       <li>Type: ${pokemon.type}</li> 
     </ul>
-    
     </article>`
   );
   console.log(pokemon.name);
