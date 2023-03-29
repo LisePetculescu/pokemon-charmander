@@ -23,7 +23,7 @@ const charmander = {
   statsSpeed: 6.5, //0-10,
 };
 
-// trying to remove some classes when escape pressed: (not working)
+// trying to remove some classes when escape pressed: (not working) --> works now in js file
 // it also removes the classes when space pressed...
 // 
 // document.addEventListener('keydown', evt => {

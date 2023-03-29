@@ -4,23 +4,26 @@
   grid-template-columns: 1fr;
   gap: 1em;
   padding: 1em;
-  /* background-color: red; */
 }
+
 @media (min-width: 400px) {
   .grid {
     grid-template-columns: 1fr 1fr;
   }
 }
+
 @media (min-width: 600px) {
   .grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
 @media (min-width: 992px) {
   .grid {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
+
 @media (min-width: 1200px) {
   .grid {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -28,7 +31,7 @@
 }
 
 .grid-item {
-  background-color: #fb9324ce; 
+  background-color: #fb9324ce;
   /* #f0793a; */
   /* rgb(160, 100, 228) */
   position: relative;
@@ -37,8 +40,9 @@
   border: outset 6px rgba(255, 128, 0, 0.515);
   border-radius: 10px;
   cursor: pointer;
-  
+
 }
+
 .grid-item:hover {
   box-shadow: 0 0 50px orange;
   animation: focus 0.7s linear 0s infinite alternate forwards;
@@ -54,9 +58,9 @@
 /* the page */
 
 header {
-  background-color: 
-  /* #ffde74; */
-  rgb(76, 224, 76); 
+  background-color:
+    /* #ffde74; */
+    rgb(76, 224, 76);
   /* #fb9224;  */
   /* rgb(131, 27, 228); */
   /* padding: 0em; */
@@ -68,8 +72,9 @@ header {
   left: 0;
   right: 0;
   z-index: 9999;
-  
+
 }
+
 footer {
   background-color: rgb(76, 224, 76);
   /* #fb9224;  */
@@ -80,14 +85,17 @@ footer {
   height: auto;
   border: solid 3px rgba(244, 123, 1, 0.392);
 }
+
 footer a {
   color: black;
 }
+
 footer a:hover {
   box-shadow: 0 0 5px green;
 }
+
 body {
-  background-color: #ebd6d6; 
+  background-color: #ebd6d6;
   /* #f3f3f3; */
   /* rgb(158, 105, 208); */
   margin: 0;
@@ -98,10 +106,11 @@ body {
 ::-webkit-scrollbar {
   background-color: rgb(76, 224, 76);
   /* #fb9224; */
-  border: solid #ebd6d6; 
+  border: solid #ebd6d6;
   /* #fbe555; */
-    border-radius: 10px;
+  border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb {
   background-color: rgb(115, 230, 113);
   /* #eed440; */
@@ -124,11 +133,13 @@ dialog {
   background-color: #f1b657;
   animation: open 0.3s linear 0s 1 normal forwards;
 }
+
 #pokePic {
   position: relative;
   width: 80%;
   left: 10%;
 }
+
 #footPic {
   position: relative;
   width: 20%;
@@ -136,14 +147,16 @@ dialog {
 }
 
 hr {
-  height:2px;
-  border-width:0;
-  background-color:black;
+  height: 2px;
+  border-width: 0;
+  background-color: black;
 }
+
 #backBTN {
   background-color: rgb(234, 167, 43);
   border-color: #fb9324;
 }
+
 #backBTN:hover {
   box-shadow: 0 0 5px black;
   animation: focus 0.7s linear 0s infinite alternate forwards;
@@ -155,6 +168,7 @@ hr {
     transform: scale(1.01);
     background-color: #fb9324;
   }
+
   100% {
     transform: scale(1.01);
     background-color: #f1b657;
@@ -165,6 +179,7 @@ hr {
   0% {
     background-color: #fbe555;
   }
+
   100% {
     background-color: #f8f2c7;
   }
@@ -174,6 +189,7 @@ hr {
   0% {
     transform: scale(0);
   }
+
   100% {
     transform: scale(1);
   }
