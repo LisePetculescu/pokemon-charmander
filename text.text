@@ -1,3 +1,10 @@
+// noter til mig selv til evt senere brug :J
+
+// notes: 
+// - background jumps to top of the page when it goes 
+// to modal view, because it gets the class fixed
+// - rasmus said to put blur on :backdrop instead of body
+
 const charmander = {
   name: "Charmander",
   description: "Lille orange gut/gutinde, med ild i halen",
@@ -24,7 +31,7 @@ const charmander = {
 };
 
 // trying to remove some classes when escape pressed: (not working) --> works now in js file
-// it also removes the classes when space pressed...
+// it also removes the classes when space and enter is pressed...
 // 
 // document.addEventListener('keydown', evt => {
 //   if (evt.key === 'Escape') {

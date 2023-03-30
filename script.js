@@ -1,35 +1,27 @@
-// to do:
-// done - boolean --> til ny string se https://cederdorff.github.io/dat-js/slides/Loops-events-&-closure.pdf
-// !venter svar fra race - aktivitetsdiagram
-// done - skitser
-// done - readme.md
-// done - css on button
-// done - when esc pressed in modal view --> fuckUp
-
 "use-strict";
 
 window.addEventListener("load", initApp);
 
 async function initApp() {
-  const pokemons = await getPokemon(
+  const pokemons = await getPokemons(
     "https://cederdorff.github.io/dat-js/05-data/pokemons.json"
   );
   pokemons.sort(sortByDexindex);
   console.log(pokemons);
 
-  // pokemons.forEach(showPokemon);
+  // pokemons.forEach(showPokemons);
   for (const pokemon of pokemons) {
-    showPokemon(pokemon);
+    showPokemons(pokemon);
   }
 }
 
-async function getPokemon(url) {
+async function getPokemons(url) {
   const response = await fetch(url);
   const data = await response.json();
   return data;
 }
 
-function showPokemon(pokemon) {
+function showPokemons(pokemon) {
   document.querySelector("#pokemons").insertAdjacentHTML(
     "beforeend",
     /*HTML*/ `  

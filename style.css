@@ -32,8 +32,6 @@
 
 .grid-item {
   background-color: #fb9324ce;
-  /* #f0793a; */
-  /* rgb(160, 100, 228) */
   position: relative;
   top: 130px;
   padding: 1em;
@@ -45,7 +43,6 @@
 .grid-item:hover {
   box-shadow: 0 0 50px orange;
   animation: focus 0.7s linear 0s infinite alternate forwards;
-  /* z-index: 99; */
 }
 
 .grid-item img {
@@ -55,16 +52,11 @@
 }
 
 /* the page */
-
 header {
-  background-color:
-    /* #ffde74; */ rgb(76, 224, 76);
-  /* #fb9224;  */
-  /* rgb(131, 27, 228); */
-  /* padding: 0em; */
+  background-color: rgb(76, 224, 76);
   text-align: center;
   height: auto;
-  border: solid 3px rgba(244, 123, 1, 0.407);
+  border: outset 4px rgba(1, 244, 86, 0.407);
   position: fixed;
   top: 0;
   left: 0;
@@ -74,13 +66,11 @@ header {
 
 footer {
   background-color: rgb(76, 224, 76);
-  /* #fb9224;  */
-  /* rgb(131, 27, 228); */
   position: relative;
   top: 130px;
   padding: 2em;
   height: auto;
-  border: solid 3px rgba(244, 123, 1, 0.392);
+  border: outset 3px rgba(40, 170, 13, 0.571);
 }
 
 footer a {
@@ -92,26 +82,20 @@ footer a:hover {
 }
 
 body {
-  background-color: #ebd6d6;
-  /* #f3f3f3; */
-  /* rgb(158, 105, 208); */
+  background-color: rgb(246, 246, 148);
   margin: 0;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  /* animation: shine 2s ease-in-out 0s infinite alternate forwards; */
 }
 
 ::-webkit-scrollbar {
   background-color: rgb(76, 224, 76);
-  /* #fb9224; */
-  border: solid #ebd6d6;
-  /* #fbe555; */
+  border: solid rgb(246, 246, 148);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: rgb(115, 230, 113);
-  /* #eed440; */
-  border: solid 1px #ebd6d6;
+  border: solid 1px rgb(246, 246, 148);
   border-radius: 10px;
 }
 
