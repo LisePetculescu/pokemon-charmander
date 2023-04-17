@@ -132,9 +132,11 @@ hr {
   background-color: black;
 }
 
-#backBTN {
+#backBTN,
+#backBTN:focus-visible {
   background-color: rgb(234, 167, 43);
   border-color: #fb9324;
+  outline: none;
 }
 
 #backBTN:hover {
